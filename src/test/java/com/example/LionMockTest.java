@@ -23,7 +23,11 @@ public class LionMockTest {
     @Test
     public void getFood() throws Exception {
         Lion lion = new Lion(feline, "Самец");
-        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Птица", "Оленина"));
-        assertEquals(List.of("Птица", "Оленина"), lion.getFood());
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
     }
+    @Test(expected = Exception.class)
+    public void lionSexExcept2 () throws Exception {
+        Lion exceptionLion = new Lion(feline, "Саме");
+}
 }
